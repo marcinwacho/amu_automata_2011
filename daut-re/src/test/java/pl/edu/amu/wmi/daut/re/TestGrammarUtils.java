@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 public class TestGrammarUtils extends TestCase {
 
 /**
-* Test sprawdzający działanie wszystkich metod klasy. 
+* Test sprawdzający działanie wszystkich metod klasy.
 */
     public final void testGrammarUtils() {
 
