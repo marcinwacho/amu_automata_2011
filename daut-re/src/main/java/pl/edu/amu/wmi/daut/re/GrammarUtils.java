@@ -31,7 +31,7 @@ public class GrammarUtils {
     /**
      * Główna metoda klasy.
      */
-    public boolean isLinear(Grammar g) {
+    public static boolean isLinear(Grammar g) {
         for (GrammarRule rule : g.allRules()) {
 
             int terminalSymbols = 0;
