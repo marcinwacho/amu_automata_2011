@@ -46,4 +46,3 @@ public class GrammarUtils {
         return true;
     }
 }
-
