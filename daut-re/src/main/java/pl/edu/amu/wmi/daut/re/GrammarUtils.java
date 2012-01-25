@@ -34,13 +34,13 @@ public class GrammarUtils {
     public static boolean isLinear(Grammar g) {
         for (GrammarRule rule : g.allRules()) {
 
-            int terminalSymbols = 0;
+            int nonterminalSymbols = 0;
 
             for (GrammarSymbol symbol : rule.getRhsSymbols())
-                if (symbol.isTerminalSymbol())
-                    terminalSymbols++;
+                if (!symbol.isTerminalSymbol())
+                    nonterminalSymbols++;
 
-            if (terminalSymbols > 1)
+            if (nonterminalSymbols > 1)
                 return false;
         }
         return true;
