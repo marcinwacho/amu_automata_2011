@@ -1,3 +1,5 @@
+package pl.edu.amu.wmi.daut.re;
+
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.TestCase;
@@ -8,8 +10,8 @@ import junit.framework.TestCase;
 public class TestGrammarUtils extends TestCase {
 
 /**
-* Test sprawdzający działanie wszystkich metod klasy.
-*/
+ * Test sprawdzający działanie wszystkich metod klasy.
+ */
     public final void testGrammarUtils() {
 
         GrammarNonterminalSymbol startSymbol = new GrammarNonterminalSymbol('S');
@@ -33,6 +35,19 @@ public class TestGrammarUtils extends TestCase {
         grammar.addRule(new GrammarRule(symbolB, symbolb));
         grammar.addRule(new GrammarRule(symbolC, symbolc));
 
-        //assertFalse(GrammarUtils.isLinear(grammar));
+        assertFalse(GrammarUtils.isLinear(grammar));
+
+        Grammar grammar1 = new Grammar(startSymbol);
+
+        List<GrammarSymbol> tmp1 = new ArrayList<GrammarSymbol>();
+        tmp1.add(symbola);
+        tmp1.add(symbolB);
+
+
+        grammar1.addRule(new GrammarRule(startSymbol, symbolA));
+        grammar1.addRule(new GrammarRule(symbolA, tmp1));
+        grammar1.addRule(new GrammarRule(symbolB, symbolb));
+
+        assertTrue(GrammarUtils.isLinear(grammar1));
     }
 }
