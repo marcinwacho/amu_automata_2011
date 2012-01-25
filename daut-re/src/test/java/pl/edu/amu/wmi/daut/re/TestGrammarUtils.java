@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 /**
  * Test metody isLinear()
- */
+ */ 
 public class TestGrammarUtils extends TestCase {
 
 /**
